@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.chart.*?>
+<?import com.jfoenix.validation.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" cache="true" prefHeight="690.0" prefWidth="1280.0" style="-fx-background-color: #202225;" stylesheets="@css/stile.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bitcoinviewver.FXMLDocumentController">
+   <children>
+      <Pane fx:id="drag_panel" prefHeight="22.0" prefWidth="1280.0" style="-fx-background-color: #202225;">
+         <children>
+            <ImageView cache="true" cacheHint="SPEED" fitHeight="18.0" fitWidth="18.0" layoutX="1214.0" layoutY="2.0" nodeOrientation="INHERIT" onMouseClicked="#iconized" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@immagini/afinestra.png" />
+               </image>
+            </ImageView>
+            <ImageView cache="true" cacheHint="SPEED" fitHeight="18.0" fitWidth="18.0" layoutX="1247.0" layoutY="2.0" nodeOrientation="INHERIT" onMouseClicked="#exit" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <image>
+                  <Image url="@immagini/exit.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="4.0" prefHeight="15.0" prefWidth="70.0" text="TRADING" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Moon Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="79.0" layoutY="5.0" prefHeight="14.0" prefWidth="230.0" text="V.0.0.1 pre-alpha C.Zuccante 5IC by Florian *" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="11.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutY="22.0" prefHeight="678.0" prefWidth="70.0" style="-fx-background-color: #202225;">
+         <children>
+            <Pane layoutY="14.0" prefHeight="100.0" prefWidth="70.0">
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" x="10.0" y="10.0">
+                     <image>
+                        <Image url="@immagini/omino.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="70.0" prefHeight="15.0" prefWidth="70.0" text="FLORIAN" textAlignment="RIGHT" textFill="#c5c5c5">
+                     <font>
+                        <Font name="Moon Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="24.0" layoutY="86.0" opacity="0.7" prefHeight="15.0" prefWidth="25.0" />
+                  <JFXButton layoutX="5.0" layoutY="5.0" onMouseClicked="#openProfile" prefHeight="60.0" prefWidth="60.0" ripplerFill="WHITE" style="-fx-background-radius: 50;" stylesheets="@css/stile.css" text=" " textAlignment="CENTER" />
+               </children>
+            </Pane>
+            <VBox alignment="TOP_CENTER" layoutY="115.0" prefHeight="563.0" prefWidth="70.0">
+               <children>
+                  <Pane layoutX="10.0" layoutY="257.0" prefHeight="70.0" prefWidth="70.0">
+                     <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="17.5" layoutY="17.5" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@immagini/home.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton layoutX="5.0" layoutY="5.0" onMouseClicked="#openHome" prefHeight="60.0" prefWidth="60.0" ripplerFill="WHITE" style="-fx-background-radius: 50;" stylesheets="@css/stile.css" text=" " textAlignment="CENTER" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Pane>
+                  <Pane prefHeight="70.0" prefWidth="70.0">
+                     <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="17.5" layoutY="17.5" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@immagini/settings.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton layoutX="5.0" layoutY="5.0" onMouseClicked="#openSettings" prefHeight="60.0" prefWidth="60.0" ripplerFill="WHITE" stylesheets="@css/stile.css" text=" " textAlignment="CENTER" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Pane>
+                  <Pane layoutX="10.0" layoutY="145.0" prefHeight="70.0" prefWidth="70.0">
+                     <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="17.5" layoutY="17.5" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@immagini/edit.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton layoutX="5.0" layoutY="5.0" onMouseClicked="#openNote" prefHeight="60.0" prefWidth="60.0" ripplerFill="WHITE" style="-fx-background-radius: 50;" stylesheets="@css/stile.css" text=" " textAlignment="CENTER" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Pane>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" top="35.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+         </children>
+      </Pane>
+      <Pane layoutX="70.0" layoutY="650.0" prefHeight="50.0" prefWidth="240.0" style="-fx-background-color: #2A2C31; -fx-background-radius: 0 0 0 10;">
+         <children>
+            <Label fx:id="data_label" alignment="CENTER" contentDisplay="CENTER" layoutX="58.0" layoutY="-2.0" mouseTransparent="true" prefHeight="50.0" prefWidth="177.0" text="--/--/---- xx:xx:xx" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Moon Bold" size="13.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="23.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@immagini/clock.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="delay_label" alignment="CENTER" contentDisplay="CENTER" layoutX="58.0" layoutY="24.0" prefHeight="25.0" prefWidth="18.0" text="3" textFill="#0f9d58">
+               <font>
+                  <Font name="Moon Bold" size="13.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <AnchorPane fx:id="delayPane" layoutX="70.0" layoutY="22.0" prefHeight="628.0" prefWidth="240.0" style="-fx-background-color: #2F3136; -fx-background-radius: 10 0 0 0;" visible="false">
+         <children>
+            <VBox layoutY="172.0" prefHeight="241.0" prefWidth="240.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="49.0" prefWidth="240.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="54.0" prefWidth="70.0" text="OPACITY" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Moon Light" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <JFXSlider fx:id="slider_opacity" min="20.0" onMouseDragged="#opacitySlider" onMousePressed="#opacitySlider" onMouseReleased="#opacitySlider" prefHeight="14.0" prefWidth="143.0" value="100.0">
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </JFXSlider>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="108.0" prefHeight="49.0" prefWidth="240.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="49.0" prefWidth="120.0" text="alert is under " textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Moon Light" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="2.0" right="2.0" />
+                           </HBox.margin>
+                        </Label>
+                        <JFXTextField alignment="CENTER" focusColor="WHITE" labelFloat="true" prefHeight="25.0" prefWidth="60.0" promptText="bitcoin" style="-fx-text-inner-color: white;" unFocusColor="BLACK">
+                           <HBox.margin>
+                              <Insets left="4.0" right="4.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Moon Light" size="13.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="15.0" layoutY="20.0" prefHeight="49.0" prefWidth="240.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="54.0" prefWidth="70.0" text="DELAY" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Moon Light" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <JFXSlider fx:id="delay_opacity" blockIncrement="1.0" max="10.0" min="2.0" onMouseDragged="#delaySlider" onMousePressed="#delaySlider" onMouseReleased="#toast" prefHeight="14.0" prefWidth="143.0" value="3.0">
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </JFXSlider>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutY="63.0" prefHeight="70.0" prefWidth="240.0" text="SETTINGS" textAlignment="CENTER" textFill="#c5c5c5">
+               <font>
+                  <Font name="Moon Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="homePane" layoutX="70.0" layoutY="22.0" prefHeight="628.0" prefWidth="240.0" style="-fx-background-color: #2F3136; -fx-background-radius: 10 0 0 0;" visible="false" />
+      <AnchorPane fx:id="profilePane" layoutX="70.0" layoutY="22.0" prefHeight="628.0" prefWidth="240.0" style="-fx-background-color: #2F3136; -fx-background-radius: 10 0 0 0;">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutY="65.0" prefHeight="70.0" prefWidth="240.0" text="PROFILE" textAlignment="CENTER" textFill="#c5c5c5">
+               <font>
+                  <Font name="Moon Bold" size="24.0" />
+               </font>
+            </Label>
+            <JFXComboBox layoutX="36.0" layoutY="182.0" promptText="USD" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="notePane" layoutX="70.0" layoutY="22.0" prefHeight="628.0" prefWidth="240.0" style="-fx-background-color: #2F3136; -fx-background-radius: 10 0 0 0;">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutY="65.0" prefHeight="50.0" prefWidth="240.0" text="NOTE" textAlignment="CENTER" textFill="#c5c5c5">
+               <font>
+                  <Font name="Moon Bold" size="24.0" />
+               </font>
+            </Label>
+            <JFXTextArea layoutX="9.0" layoutY="203.0" prefHeight="266.0" prefWidth="222.0" promptText="Add all notes you need here...">
+               <font>
+                  <Font name="Calibri Italic" size="12.0" />
+               </font>
+            </JFXTextArea>
+            <JFXColorPicker editable="true" layoutX="70.0" layoutY="525.0" promptText="Color Picker" />
+            <JFXSlider fx:id="slider_opacity1" blockIncrement="1.0" layoutX="52.0" layoutY="496.0" max="30.0" min="10.0" minorTickCount="1" onMouseDragged="#opacitySlider" onMousePressed="#opacitySlider" onMouseReleased="#opacitySlider" prefHeight="14.0" prefWidth="143.0" showTickLabels="true" showTickMarks="true" value="14.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="1040.0" layoutY="72.0" prefHeight="628.0" prefWidth="240.0" style="-fx-background-color: #2F3136; -fx-background-radius: 0 0 10 0;">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutY="10.0" prefHeight="34.0" prefWidth="240.0" text="CHANGES" textAlignment="CENTER" textFill="#c5c5c5">
+               <font>
+                  <Font name="Moon Bold" size="24.0" />
+               </font>
+            </Label>
+            <SplitPane dividerPositions="0.49159663865546216" layoutY="83.0" prefHeight="288.0" prefWidth="240.0" styleClass="splitdivider" AnchorPane.bottomAnchor="257.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="83.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <VBox fx:id="changes_perc" alignment="CENTER" layoutX="9.0" layoutY="10.0" prefHeight="266.0" prefWidth="96.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="10.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="38.0" prefWidth="200.0">
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="42.0" text="h :" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font name="Moon Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="80.0" text="-" textAlignment="CENTER" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+                                       <font>
+                                          <Font name="Moon Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="12.0" layoutY="12.0" prefHeight="38.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="42.0" text="D :" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font name="Moon Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="80.0" text="-" textAlignment="CENTER" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+                                       <font>
+                                          <Font name="Moon Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="52.0" prefHeight="38.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="42.0" text="w :" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font name="Moon Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="80.0" text="-" textAlignment="CENTER" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+                                       <font>
+                                          <Font name="Moon Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="90.0" prefHeight="38.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="42.0" text="m :" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font name="Moon Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="80.0" text="-" textAlignment="CENTER" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+                                       <font>
+                                          <Font name="Moon Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="128.0" prefHeight="38.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="42.0" text="3m :" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font name="Moon Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="80.0" text="-" textAlignment="CENTER" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+                                       <font>
+                                          <Font name="Moon Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="166.0" prefHeight="38.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="42.0" text="6M :" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font name="Moon Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="80.0" text="-" textAlignment="CENTER" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+                                       <font>
+                                          <Font name="Moon Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="204.0" prefHeight="38.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="42.0" text="Y :" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font name="Moon Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="80.0" text="-" textAlignment="CENTER" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+                                       <font>
+                                          <Font name="Moon Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children></AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <VBox fx:id="changes_price" alignment="CENTER" layoutX="11.0" layoutY="10.0" prefHeight="266.0" prefWidth="96.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="38.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="42.0" text="h :" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font name="Moon Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="80.0" text="-" textAlignment="CENTER" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+                                       <font>
+                                          <Font name="Moon Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="12.0" layoutY="12.0" prefHeight="38.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="42.0" text="D :" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font name="Moon Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="80.0" text="-" textAlignment="CENTER" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+                                       <font>
+                                          <Font name="Moon Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="52.0" prefHeight="38.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="42.0" text="w :" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font name="Moon Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="80.0" text="-" textAlignment="CENTER" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+                                       <font>
+                                          <Font name="Moon Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="90.0" prefHeight="38.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="42.0" text="m :" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font name="Moon Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="80.0" text="-" textAlignment="CENTER" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+                                       <font>
+                                          <Font name="Moon Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="128.0" prefHeight="38.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="42.0" text="3m :" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font name="Moon Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="80.0" text="-" textAlignment="CENTER" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+                                       <font>
+                                          <Font name="Moon Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="166.0" prefHeight="38.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="42.0" text="6M :" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font name="Moon Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="80.0" text="-" textAlignment="CENTER" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+                                       <font>
+                                          <Font name="Moon Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="204.0" prefHeight="38.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="42.0" text="Y :" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font name="Moon Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="80.0" text="-" textAlignment="CENTER" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+                                       <font>
+                                          <Font name="Moon Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children></AnchorPane>
+              </items>
+            </SplitPane>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="44.0" prefHeight="28.0" prefWidth="114.0" text="\%" textAlignment="CENTER" textFill="#c5c5c5">
+               <font>
+                  <Font name="Moon Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="123.0" layoutY="44.0" prefHeight="28.0" prefWidth="114.0" text="\$" textAlignment="CENTER" textFill="#c5c5c5">
+               <font>
+                  <Font name="Moon Bold" size="16.0" />
+               </font>
+            </Label>
+            <Pane layoutY="387.0" prefHeight="241.0" prefWidth="240.0" style="-fx-background-color: #202225;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="387.0">
+               <children>
+                  <PieChart fx:id="pieChart" layoutX="13.0" layoutY="15.0" legendSide="TOP" prefHeight="212.0" prefWidth="214.0">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </PieChart>
+                  <Label fx:id="volume" contentDisplay="CENTER" layoutX="7.0" layoutY="7.0" prefHeight="15.0" prefWidth="70.0" text="-" textFill="#c5c5c5">
+                     <font>
+                        <Font name="Moon Bold" size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="volumePerc" contentDisplay="CENTER" layoutX="7.0" layoutY="22.0" prefHeight="15.0" prefWidth="70.0" text="-" textFill="#c5c5c5">
+                     <font>
+                        <Font name="Moon Bold" size="10.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="228.0" prefHeight="14.0" prefWidth="230.0" text="Copyright © 2018 brainLAb Inc. All Right Reserved." textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri" size="11.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children></AnchorPane>
+      <Pane layoutX="82.0" layoutY="22.0" prefHeight="50.0" prefWidth="1198.0" style="-fx-background-color: #2F3136; -fx-background-radius: 0 10 0 0;">
+         <children>
+            <JFXScrollPane fx:id="history_scroll" prefHeight="49.0" prefWidth="957.0" />
+            <Label fx:id="value_label" alignment="CENTER" contentDisplay="CENTER" layoutX="960.0" layoutY="-7.0" prefHeight="70.0" prefWidth="240.0" text="-" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Moon Bold" size="34.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <AnchorPane layoutX="310.0" layoutY="72.0" prefHeight="628.0" prefWidth="730.0" style="-fx-border-color: #2F3136; -fx-background-color: #2F3136;">
+         <children>
+            <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="628.0" prefWidth="730.0" style="-fx-background-color: #2F3136;" stylesheets="@css/stile.css">
+              <items>
+                <AnchorPane fx:id="zoom_real_time_line" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #202225;">
+                     <children>
+                        <LineChart fx:id="lineChart" layoutX="10.0" layoutY="7.0" legendSide="LEFT" prefHeight="296.0" prefWidth="708.0" stylesheets="@css/stile.css" verticalGridLinesVisible="false" verticalZeroLineVisible="false" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="7.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="187.0" prefWidth="728.0" style="-fx-background-color: #202225;">
+                     <children>
+                        <AnchorPane prefHeight="310.0" prefWidth="262.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="466.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ScatterChart fx:id="scatterChart" layoutX="7.0" layoutY="7.0" legendVisible="false" prefHeight="296.0" prefWidth="249.0" verticalZeroLineVisible="false" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="7.0">
+                                <xAxis>
+                                  <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                              </ScatterChart>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="zoom_group_value" layoutX="272.0" prefHeight="310.0" prefWidth="456.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="272.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AreaChart fx:id="chartValueBitcoin" animated="false" layoutX="5.0" layoutY="7.0" legendSide="TOP" prefHeight="296.0" prefWidth="446.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="7.0">
+                                <xAxis>
+                                  <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                              </AreaChart>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

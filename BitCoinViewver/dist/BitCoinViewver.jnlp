@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="BitCoinViewver.jnlp">
+  <information>
+    <title>BitCoinViewver</title>
+    <vendor>saban</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="BitCoinViewver.jar" size="71773" download="eager" />
+    <jar href="lib\java-json.jar" size="84697" download="eager" />
+    <jar href="lib\jfoenix-8.0.7.jar" size="2631271" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="BitCoinViewver" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="bitcoinviewver.Main"  name="BitCoinViewver" />
+  <update check="always"/>
+</jnlp>
